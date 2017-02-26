@@ -14,6 +14,7 @@
 		799EF01A1E622B88003CA075 /* QuarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0191E622B88003CA075 /* QuarkTests.swift */; };
 		799EF0251E622B88003CA075 /* QuarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0241E622B88003CA075 /* QuarkUITests.swift */; };
 		DFA7BA251E6234D100A417D0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA7BA241E6234D100A417D0 /* Extensions.swift */; };
+		DFA7BA291E623BC000A417D0 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA7BA281E623BC000A417D0 /* TextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		799EF0241E622B88003CA075 /* QuarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarkUITests.swift; sourceTree = "<group>"; };
 		799EF0261E622B88003CA075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFA7BA241E6234D100A417D0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DFA7BA281E623BC000A417D0 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				799EF0041E622B88003CA075 /* AppDelegate.swift */,
 				DFA7BA241E6234D100A417D0 /* Extensions.swift */,
 				799EF0061E622B88003CA075 /* HomeViewController.swift */,
+				DFA7BA281E623BC000A417D0 /* TextViewController.swift */,
 				799EF00B1E622B88003CA075 /* Assets.xcassets */,
 				799EF00D1E622B88003CA075 /* LaunchScreen.storyboard */,
 				799EF0101E622B88003CA075 /* Info.plist */,
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					799EF0001E622B88003CA075 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VWPW3T433D;
 						ProvisioningStyle = Automatic;
 					};
 					799EF0141E622B88003CA075 = {
@@ -261,6 +265,7 @@
 				799EF0071E622B88003CA075 /* HomeViewController.swift in Sources */,
 				DFA7BA251E6234D100A417D0 /* Extensions.swift in Sources */,
 				799EF0051E622B88003CA075 /* AppDelegate.swift in Sources */,
+				DFA7BA291E623BC000A417D0 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VWPW3T433D;
 				INFOPLIST_FILE = Quark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flechettes.Quark;
@@ -416,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VWPW3T433D;
 				INFOPLIST_FILE = Quark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flechettes.Quark;
