@@ -16,6 +16,22 @@ class TextViewController: UIViewController, UITextViewDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    var selectedLanguage : String {
+        let language = "HTML"
+        return language
+        
+    }
+    
+    var selectedFont: String {
+        let font = "Menlo-Bold"
+        return font
+    }
+    
+    var selectedFontSize: CGFloat {
+        let fontSize = 18.0
+        return CGFloat(fontSize)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +53,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
         textView.autocorrectionType = .no
         textView.font = .systemFont(ofSize: 26)
         textView.backgroundColor = UIColor(netHex: 0x2A2D34)
+        textView.font = UIFont(name: selectedFont, size: selectedFontSize)
         
 //        let textStorage = CodeAttributedString()
 //        textStorage.language = "Swift"
@@ -93,11 +110,11 @@ class TextViewController: UIViewController, UITextViewDelegate {
         let highlightr = Highlightr()
         highlightr?.setTheme(to: "atom-one-dark")
         // You can omit the second parameter to use automatic language detection.
-        let highlightedCode = highlightr?.highlight(textView.text, as: "CSS", fastRender: true)
+        let highlightedCode = highlightr?.highlight(textView.text, as: selectedLanguage, fastRender: true)
         textView.attributedText = highlightedCode
         textView.font = UIFont(
-            name: "Menlo-Bold",
-            size: 18.0)
+            name: selectedFont,
+            size: selectedFontSize)
     }
 
 }
