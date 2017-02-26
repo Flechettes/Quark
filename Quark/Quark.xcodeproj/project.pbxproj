@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		799EF0051E622B88003CA075 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0041E622B88003CA075 /* AppDelegate.swift */; };
-		799EF0071E622B88003CA075 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0061E622B88003CA075 /* ViewController.swift */; };
-		799EF00A1E622B88003CA075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799EF0081E622B88003CA075 /* Main.storyboard */; };
+		799EF0071E622B88003CA075 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0061E622B88003CA075 /* TextViewController.swift */; };
 		799EF00C1E622B88003CA075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799EF00B1E622B88003CA075 /* Assets.xcassets */; };
 		799EF00F1E622B88003CA075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799EF00D1E622B88003CA075 /* LaunchScreen.storyboard */; };
 		799EF01A1E622B88003CA075 /* QuarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0191E622B88003CA075 /* QuarkTests.swift */; };
 		799EF0251E622B88003CA075 /* QuarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0241E622B88003CA075 /* QuarkUITests.swift */; };
+		799EF0351E6234F6003CA075 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0341E6234F6003CA075 /* Extensions.swift */; };
+		799EF0391E6239CA003CA075 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0381E6239CA003CA075 /* HomeViewController.swift */; };
+		799EF03B1E6255F9003CA075 /* quark_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 799EF03A1E6255F9003CA075 /* quark_logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,7 @@
 /* Begin PBXFileReference section */
 		799EF0011E622B88003CA075 /* Quark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799EF0041E622B88003CA075 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		799EF0061E622B88003CA075 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		799EF0091E622B88003CA075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		799EF0061E622B88003CA075 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		799EF00B1E622B88003CA075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		799EF00E1E622B88003CA075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		799EF0101E622B88003CA075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		799EF0201E622B88003CA075 /* QuarkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuarkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		799EF0241E622B88003CA075 /* QuarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarkUITests.swift; sourceTree = "<group>"; };
 		799EF0261E622B88003CA075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		799EF0341E6234F6003CA075 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		799EF0381E6239CA003CA075 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		799EF03A1E6255F9003CA075 /* quark_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = quark_logo.png; path = ../../quark_logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				799EF0041E622B88003CA075 /* AppDelegate.swift */,
-				799EF0061E622B88003CA075 /* ViewController.swift */,
-				799EF0081E622B88003CA075 /* Main.storyboard */,
+				799EF0341E6234F6003CA075 /* Extensions.swift */,
+				799EF03A1E6255F9003CA075 /* quark_logo.png */,
+				799EF0381E6239CA003CA075 /* HomeViewController.swift */,
+				799EF0061E622B88003CA075 /* TextViewController.swift */,
 				799EF00B1E622B88003CA075 /* Assets.xcassets */,
 				799EF00D1E622B88003CA075 /* LaunchScreen.storyboard */,
 				799EF0101E622B88003CA075 /* Info.plist */,
@@ -232,9 +238,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				799EF03B1E6255F9003CA075 /* quark_logo.png in Resources */,
 				799EF00F1E622B88003CA075 /* LaunchScreen.storyboard in Resources */,
 				799EF00C1E622B88003CA075 /* Assets.xcassets in Resources */,
-				799EF00A1E622B88003CA075 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				799EF0071E622B88003CA075 /* ViewController.swift in Sources */,
+				799EF0071E622B88003CA075 /* TextViewController.swift in Sources */,
+				799EF0351E6234F6003CA075 /* Extensions.swift in Sources */,
 				799EF0051E622B88003CA075 /* AppDelegate.swift in Sources */,
+				799EF0391E6239CA003CA075 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		799EF0081E622B88003CA075 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				799EF0091E622B88003CA075 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		799EF00D1E622B88003CA075 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
