@@ -58,7 +58,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
         self.textView.delegate = self
         view.backgroundColor = UIColor(netHex: 0x2A2D34);
         view.addSubview(textView)
-        textView.addSubview(Menu)
+        self.textView.addSubview(Menu)
         setUpNavigationBar()
         
         self.navigationController?.isNavigationBarHidden = false
@@ -66,7 +66,18 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         setUpTextEditor()
+        self.Menu.cellTapHandler = { [weak self] (indexPath: IndexPath) -> Void in
+            print(indexPath.item)
+            print(indexPath.row)
+            self?.textView.backgroundColor = .red
+            print("drop down item selected")
+            //            self?.textView.text = String(indexPath.count)
+            //            self?.navigationController?.pushViewController(self!, animated:true)
+        }
     }
+    
+    
+    
     
     
     func setUpTextEditor(){
@@ -109,8 +120,6 @@ class TextViewController: UIViewController, UITextViewDelegate {
         homeButton.tintColor = .gray
         saveButton.tintColor = .gray
         
-        
-        
 //        self.Menu.hideMenu()
 //        self.Menu.itemFontName = "Futura"
 //        self.Menu.itemFontColor = UIColor(netHex: 0xD5B0AC)
@@ -120,7 +129,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
 //        self.Menu.menuSeparatorColor = UIColor(netHex: 0x684551)
 //        self.Menu.itemAlignment = .center
         
-        let dropdownButton = UIBarButtonItem(title: "Drop", style: .plain, target: self, action: #selector(showDropdown))
+        let dropdownButton = UIBarButtonItem(title: "Language", style: .plain, target: self, action: #selector(showDropdown))
         
         navigationItem.leftBarButtonItems = [homeButton, dropdownButton]
         navigationItem.rightBarButtonItems = [saveButton]
@@ -134,6 +143,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     func showDropdown() {
         print("show drop down")
+        
         if (self.Menu.isDescendant(of: self.textView) == true) {
             self.Menu.hideMenu()
         } else {
@@ -152,6 +162,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
         print("typing")
+        
         let highlightr = Highlightr()
         highlightr?.setTheme(to: "atom-one-dark")
         // You can omit the second parameter to use automatic language detection.
