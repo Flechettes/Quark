@@ -8,6 +8,7 @@
 
 import UIKit
 import Highlightr
+import AZDropdownMenu
 
 class TextViewController: UIViewController, UITextViewDelegate {
     
@@ -18,12 +19,14 @@ class TextViewController: UIViewController, UITextViewDelegate {
     }()
     
     var selectedLanguage : String {
+        //
         let language = "HTML"
         return language
         
     }
     
     var selectedFont: String {
+        //Courier, Courier New, CourierNewPSMT, Courier-Bold, Menlo-Regular
         let font = "Menlo-Bold"
         return font
     }
@@ -32,12 +35,30 @@ class TextViewController: UIViewController, UITextViewDelegate {
         let fontSize = 18.0
         return CGFloat(fontSize)
     }
+    
+    var Menu: AZDropdownMenu {
+        let titles = ["HTML", "CSS", "JS", "Java", "Scala", "Swift"]
+        let menu = AZDropdownMenu(titles: titles)
+        menu.itemHeight = 40
+        menu.itemFontName = "Futura"
+        menu.itemFontColor = UIColor(netHex: 0xD5B0AC)
+        menu.itemFontSize = 18.0
+        menu.overlayAlpha = 0.0
+        menu.overlayColor = UIColor(netHex:0x2A2D34)
+        menu.menuSeparatorColor = UIColor(netHex: 0x684551)
+        menu.itemAlignment = .center
+
+        return menu
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textView.delegate = self
         view.backgroundColor = UIColor(netHex: 0x2A2D34);
         view.addSubview(textView)
+        textView.addSubview(Menu)
         setUpNavigationBar()
         
         self.navigationController?.isNavigationBarHidden = false
@@ -72,6 +93,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     
     func setUpNavigationBar(){
+        self.Menu.hideMenu()
         navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -86,7 +108,21 @@ class TextViewController: UIViewController, UITextViewDelegate {
         let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveFile))
         homeButton.tintColor = .gray
         saveButton.tintColor = .gray
-        navigationItem.leftBarButtonItems = [homeButton]
+        
+        
+        
+//        self.Menu.hideMenu()
+//        self.Menu.itemFontName = "Futura"
+//        self.Menu.itemFontColor = UIColor(netHex: 0xD5B0AC)
+//        self.Menu.itemFontSize = 18.0
+//        self.Menu.overlayAlpha = 0.2
+//        self.Menu.overlayColor = .gray
+//        self.Menu.menuSeparatorColor = UIColor(netHex: 0x684551)
+//        self.Menu.itemAlignment = .center
+        
+        let dropdownButton = UIBarButtonItem(title: "Drop", style: .plain, target: self, action: #selector(showDropdown))
+        
+        navigationItem.leftBarButtonItems = [homeButton, dropdownButton]
         navigationItem.rightBarButtonItems = [saveButton]
     }
     
@@ -94,6 +130,15 @@ class TextViewController: UIViewController, UITextViewDelegate {
 //        let newView = HomeViewController()
         navigationController?.popViewController(animated: true)
 //        present(newView, animated: true)
+    }
+    
+    func showDropdown() {
+        print("show drop down")
+        if (self.Menu.isDescendant(of: self.textView) == true) {
+            self.Menu.hideMenu()
+        } else {
+            self.Menu.showMenuFromView(self.textView)
+        }
     }
     
     func saveFile(){
@@ -116,6 +161,5 @@ class TextViewController: UIViewController, UITextViewDelegate {
             name: selectedFont,
             size: selectedFontSize)
     }
-
 }
 
