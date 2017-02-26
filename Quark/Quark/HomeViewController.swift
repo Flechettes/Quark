@@ -11,6 +11,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    
+    
     struct palette {
         static let red = UIColor(red:0.85, green:0.44, blue:0.44, alpha:1.0)
         static let blue = UIColor(red:0.46, green:0.60, blue:0.96, alpha:1.0)
