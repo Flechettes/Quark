@@ -11,6 +11,7 @@ import UIKit
 import Highlightr
 
 class QuarkTextView: UITextView {
+    
     func textViewDidChange(_ textView: UITextView) {
         print("typing")
         let highlightr = Highlightr()

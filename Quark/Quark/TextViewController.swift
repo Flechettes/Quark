@@ -16,15 +16,6 @@ class TextViewController: UIViewController, UITextViewDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    func textViewDidChange(_ textView: UITextView) {
-        print("typing")
-        let highlightr = Highlightr()
-        highlightr?.setTheme(to: "atom-one-dark")
-        // You can omit the second parameter to use automatic language detection.
-        let highlightedCode = highlightr?.highlight(textView.text, as: "swift", fastRender: true)
-        textView.attributedText = highlightedCode
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +88,17 @@ class TextViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    func textViewDidChange(_ textView: UITextView) {
+        print("typing")
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "atom-one-dark")
+        // You can omit the second parameter to use automatic language detection.
+        let highlightedCode = highlightr?.highlight(textView.text, as: "CSS", fastRender: true)
+        textView.attributedText = highlightedCode
+        textView.font = UIFont(
+            name: "Menlo-Bold",
+            size: 18.0)
+    }
 
 }
 
