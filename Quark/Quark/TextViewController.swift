@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Highlightr
 
 class TextViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class TextViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
-    let textView: UITextView = {
+    var textView: UITextView = {
        let view = UITextView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -27,6 +28,25 @@ class TextViewController: UIViewController {
     
     func setUpTextEditor(){
         textView.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 25, leftConstant: 25, bottomConstant: 25, rightConstant: 25, widthConstant: 25, heightConstant: 25)
+        textView.font = .systemFont(ofSize: 26)
+        
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "paraiso-dark")
+        let code = "let a = 1"
+        // You can omit the second parameter to use automatic language detection.
+        let highlightedCode = highlightr?.highlight(code)
+        textView.attributedText = highlightedCode
+        
+//        let textStorage = CodeAttributedString()
+//        textStorage.language = "Swift"
+//        let layoutManager = NSLayoutManager()
+//        textStorage.addLayoutManager(layoutManager)
+//        
+//        let textContainer = NSTextContainer(size: view.bounds.size)
+//        layoutManager.addTextContainer(textContainer)
+//        
+//        textView = UITextView(frame: self.view.frame, textContainer: textContainer)
+        
     }
     
     func setUpNavigationBar(){
