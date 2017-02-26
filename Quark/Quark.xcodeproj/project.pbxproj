@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					799EF0001E622B88003CA075 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VWPW3T433D;
 						ProvisioningStyle = Automatic;
 					};
 					799EF0141E622B88003CA075 = {
@@ -412,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VWPW3T433D;
 				INFOPLIST_FILE = Quark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flechettes.Quark;
@@ -424,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VWPW3T433D;
 				INFOPLIST_FILE = Quark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flechettes.Quark;
