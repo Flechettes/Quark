@@ -30,22 +30,24 @@ class TextViewController: UIViewController {
         textView.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 25, leftConstant: 25, bottomConstant: 25, rightConstant: 25, widthConstant: 25, heightConstant: 25)
         textView.font = .systemFont(ofSize: 26)
         
+        textView.autocorrectionType = .no
+        
         let highlightr = Highlightr()
         highlightr?.setTheme(to: "paraiso-dark")
         let code = "let a = 1"
         // You can omit the second parameter to use automatic language detection.
-        let highlightedCode = highlightr?.highlight(code)
+        let highlightedCode = highlightr?.highlight(code, as: "swift", fastRender: true)
         textView.attributedText = highlightedCode
         
-//        let textStorage = CodeAttributedString()
-//        textStorage.language = "Swift"
-//        let layoutManager = NSLayoutManager()
-//        textStorage.addLayoutManager(layoutManager)
-//        
-//        let textContainer = NSTextContainer(size: view.bounds.size)
-//        layoutManager.addTextContainer(textContainer)
-//        
-//        textView = UITextView(frame: self.view.frame, textContainer: textContainer)
+        let textStorage = CodeAttributedString()
+        textStorage.language = "Swift"
+        let layoutManager = NSLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
+        
+        let textContainer = NSTextContainer(size: view.bounds.size)
+        layoutManager.addTextContainer(textContainer)
+        
+        textView = UITextView(frame: self.view.frame, textContainer: textContainer)
         
     }
     
