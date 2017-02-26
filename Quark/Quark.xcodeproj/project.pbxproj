@@ -18,6 +18,7 @@
 		799EF0351E6234F6003CA075 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0341E6234F6003CA075 /* Extensions.swift */; };
 		799EF0391E6239CA003CA075 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799EF0381E6239CA003CA075 /* HomeViewController.swift */; };
 		893A6DBDBEAC0F9F0A636AAE /* Pods_QuarkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B93377DCFEF19AA36F6B41 /* Pods_QuarkUITests.framework */; };
+		DF2326981E62E67900EB4D68 /* QuarkTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2326971E62E67900EB4D68 /* QuarkTextView.swift */; };
 		FF8F846758ADFC548E1DC3DA /* Pods_Quark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1807F2BD1D63E04C9727578B /* Pods_Quark.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		981D1A814BF984385704196D /* Pods-Quark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quark.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quark/Pods-Quark.release.xcconfig"; sourceTree = "<group>"; };
 		9829E0D1570459D30CB0E98C /* Pods-QuarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuarkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuarkTests/Pods-QuarkTests.release.xcconfig"; sourceTree = "<group>"; };
 		A3D0B7FDA020152174303072 /* Pods-Quark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quark/Pods-Quark.debug.xcconfig"; sourceTree = "<group>"; };
+		DF2326971E62E67900EB4D68 /* QuarkTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarkTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				799EF0381E6239CA003CA075 /* HomeViewController.swift */,
 				79974B061E62AAD1005D8B78 /* RecentFileViewController.swift */,
 				799EF0061E622B88003CA075 /* TextViewController.swift */,
+				DF2326971E62E67900EB4D68 /* QuarkTextView.swift */,
 				799EF00B1E622B88003CA075 /* Assets.xcassets */,
 				799EF00D1E622B88003CA075 /* LaunchScreen.storyboard */,
 				799EF0101E622B88003CA075 /* Info.plist */,
@@ -452,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2326981E62E67900EB4D68 /* QuarkTextView.swift in Sources */,
 				799EF0071E622B88003CA075 /* TextViewController.swift in Sources */,
 				799EF0351E6234F6003CA075 /* Extensions.swift in Sources */,
 				799EF0051E622B88003CA075 /* AppDelegate.swift in Sources */,

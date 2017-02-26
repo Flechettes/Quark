@@ -9,47 +9,59 @@
 import UIKit
 import Highlightr
 
-class TextViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white;
-        view.addSubview(textView)
-        setUpNavigationBar()
-        setUpTextEditor()
-        self.navigationController?.isNavigationBarHidden = false
-    }
+class TextViewController: UIViewController, UITextViewDelegate {
     
     var textView: UITextView = {
-       let view = UITextView()
+        let view = UITextView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    func textViewDidChange(_ textView: UITextView) {
+        print("typing")
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "atom-one-dark")
+        // You can omit the second parameter to use automatic language detection.
+        let highlightedCode = highlightr?.highlight(textView.text, as: "swift", fastRender: true)
+        textView.attributedText = highlightedCode
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.textView.delegate = self
+        view.backgroundColor = UIColor(netHex: 0x2A2D34);
+        view.addSubview(textView)
+        setUpNavigationBar()
+        
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setUpTextEditor()
+    }
+    
+    
     func setUpTextEditor(){
         textView.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 25, leftConstant: 25, bottomConstant: 25, rightConstant: 25, widthConstant: 25, heightConstant: 25)
-        textView.font = .systemFont(ofSize: 26)
-        
         textView.autocorrectionType = .no
+        textView.font = .systemFont(ofSize: 26)
+        textView.backgroundColor = UIColor(netHex: 0x2A2D34)
         
-        let highlightr = Highlightr()
-        highlightr?.setTheme(to: "paraiso-dark")
-        let code = "let a = 1"
-        // You can omit the second parameter to use automatic language detection.
-        let highlightedCode = highlightr?.highlight(code, as: "swift", fastRender: true)
-        textView.attributedText = highlightedCode
+//        let textStorage = CodeAttributedString()
+//        textStorage.language = "Swift"
+//        let layoutManager = NSLayoutManager()
+//        textStorage.addLayoutManager(layoutManager)
+//        
+//        let textContainer = NSTextContainer(size: view.bounds.size)
+//        layoutManager.addTextContainer(textContainer)
         
-        let textStorage = CodeAttributedString()
-        textStorage.language = "Swift"
-        let layoutManager = NSLayoutManager()
-        textStorage.addLayoutManager(layoutManager)
+        //        textView = QuarkTextView(frame: view.frame, textContainer: textContainer)
         
-        let textContainer = NSTextContainer(size: view.bounds.size)
-        layoutManager.addTextContainer(textContainer)
-        
-        textView = UITextView(frame: self.view.frame, textContainer: textContainer)
+
         
     }
+    
+    
     
     func setUpNavigationBar(){
         navigationController?.navigationBar.backgroundColor = .clear
