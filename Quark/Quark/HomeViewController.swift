@@ -12,31 +12,62 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray;
+        view.backgroundColor = UIColor(netHex: 0x0C0707)
         self.navigationController?.isNavigationBarHidden = true
         setUpUIView()
         
         let newProjectButton: UIButton = UIButton()
         newProjectButton.frame.size = CGSize(width: 200, height: 50)
-        newProjectButton.backgroundColor = UIColor.gray
+        newProjectButton.backgroundColor = UIColor(netHex: 0x0C0707)
         newProjectButton.setTitle("Create New Project", for: .normal)
         newProjectButton.addTarget(self, action: #selector(showTextView), for: .touchUpInside)
         newProjectButton.tag = 1
         newProjectButton.center.x = self.view.center.x
-        newProjectButton.center.y = self.view.center.y
+        newProjectButton.center.y = self.view.center.y + 85
         self.view.addSubview(newProjectButton)
         
-        let openRecentLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        openRecentLabel.center.x = self.view.center.x
-        openRecentLabel.center.y = self.view.center.y + 40
-        openRecentLabel.textAlignment = .center
-        openRecentLabel.text = "Open Recent File"
-        openRecentLabel.textColor = .white
-        self.view.addSubview(openRecentLabel)
+        let recentOpenProjectButton: UIButton = UIButton()
+        recentOpenProjectButton.frame.size = CGSize(width: 200, height: 50)
+        recentOpenProjectButton.backgroundColor = UIColor(netHex: 0x0C0707)
+        recentOpenProjectButton.setTitle("Open Recent Project", for: .normal)
+        recentOpenProjectButton.addTarget(self, action: #selector(showRecentFileView), for: .touchUpInside)
+        recentOpenProjectButton.tag = 1
+        recentOpenProjectButton.center.x = self.view.center.x
+        recentOpenProjectButton.center.y = self.view.center.y + 130
+        self.view.addSubview(recentOpenProjectButton)
         
         
-        // Do any additional setup after loading the view.
+        let quarkLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        quarkLabel.center.x = self.view.center.x
+        quarkLabel.center.y = self.view.center.y - 0
+        quarkLabel.textAlignment = .center
+        quarkLabel.text = "Quark Text Editor"
+        quarkLabel.textColor = UIColor(netHex: 0xFAFAFF)
+        quarkLabel.font = UIFont(name: "Savoye Let", size: 40)
+        view.addSubview(quarkLabel)
+        
+        let quarkLabel2 = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+        quarkLabel2.center.x = self.view.center.x
+        quarkLabel2.center.y = self.view.center.y + 25
+        quarkLabel2.textAlignment = .center
+        quarkLabel2.text = "Version 1.0.0"
+        quarkLabel2.textColor = UIColor(netHex: 0xFAFAFF)
+        quarkLabel2.font = UIFont(name: "Savoye Let", size: 25)
+        view.addSubview(quarkLabel2)
+        
+        
+        
+        let image: UIImage = UIImage(named: "quark_logo")!
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 400, height: 360)
+        imageView.center.x = self.view.center.x
+        imageView.center.y = self.view.center.y - 140
+        imageView.tintColor = UIColor(netHex: 0xFAFAFF)
+        view.addSubview(imageView)
+        
     }
+        // Do any additional setup after loading the view.
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
@@ -66,6 +97,10 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(newView, animated: true)
     }
     
+    func showRecentFileView() {
+        let newView = RecentFileViewController()
+        navigationController?.pushViewController(newView, animated: true)
+    }
 //    
 //    func hideNavBar(){
 ////        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
